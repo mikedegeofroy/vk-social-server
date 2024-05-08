@@ -2,11 +2,11 @@
 
 namespace App\Application\Services;
 
+use App\Application\Abstractions\IMailgunIntegration;
 use App\Application\Abstractions\IUserRepository;
 use App\Application\Contracts\IUserService;
-use App\Application\Models\User;
-use App\Application\Models\UserDto;
-use App\Application\Abstractions\IMailgunIntegration;
+use App\Application\Models\Users\User;
+use App\Application\Models\Users\UserDto;
 
 readonly class UserService implements IUserService
 {
@@ -27,7 +27,6 @@ readonly class UserService implements IUserService
             $result = new UserDTO();
 
             $result->username = $user['username'];
-            $result->email = $user['email'];
             $result->profile_picture = $user['profile_picture'];
 
             return $result;
@@ -48,7 +47,6 @@ readonly class UserService implements IUserService
         $result = new UserDTO();
 
         $result->username = $user->username;
-        $result->email = $user->email;
         $result->profile_picture = $user->profile_picture;
 
         return $result;

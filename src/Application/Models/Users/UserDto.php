@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Application\Models;
+namespace App\Application\Models\Users;
 class UserDto
 {
     public string $username;
     public ?string $profile_picture;
-    public string $email;
 }
